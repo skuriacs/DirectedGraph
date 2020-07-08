@@ -141,7 +141,10 @@ vector<int> Graph::getAdjacent(int vertex)
 		return adjacentVertices;
 	for (int i = 0; i < vertexNode->adjacentNodes.size(); i++)
 	{
-		adjacentVertices.push_back(vertexNode->adjacentNodes[i]->name);
+		if (vertexNode->weights[i] != -1) 
+		{
+			adjacentVertices.push_back(vertexNode->adjacentNodes[i]->name);
+		}
 	}
 	return adjacentVertices;
 }
